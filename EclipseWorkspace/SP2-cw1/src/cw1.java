@@ -13,9 +13,11 @@ public class cw1 {
 		/** method to find non-common values between two arrays, do this twice for 1+3, and 2+3*/
 	}
 	private static int[] fillArray(char arrName) {
-		Scanner scanner;
-		int[] returnArray[100];
 		
+		int[] returnArray;// declare array variable
+		returnArray = new int[100]; // initialise array
+
+		Scanner scanner;
 		scanner = new Scanner(System.in);
 		System.out.println("Enter data for array " + arrName +" (0 to finish): ");
 		// get first element
