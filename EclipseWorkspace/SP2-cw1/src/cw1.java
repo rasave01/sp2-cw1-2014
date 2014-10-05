@@ -10,6 +10,7 @@ public class cw1 {
 		int second[] = fillArray(b);
 		/** method to find common data and put it in a third array*/
 		/** method to display third array, and its length */
+		//changed something here to check git
 		/** method to find non-common values between two arrays, do this twice for 1+3, and 2+3*/
 	}
 	private static int[] fillArray(char arrName) {
