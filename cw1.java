@@ -26,14 +26,14 @@ public class cw1 {
 		returnArray = new int[100]; // initialise array
 		Scanner scanner = new Scanner(System.in);
 		// get first element
-		System.out.println("Enter data for array "+arrName+" (0 to finish): ");
+		System.out.print("Enter data for array "+arrName+" (0 to finish): ");
 		int i=0;
 		boolean santinelValue = true;
 		while (santinelValue) {
 			int element = scanner.nextInt();
 			if (element!=0){
 				returnArray[i] = element;
-				System.out.println("and another");
+				System.out.print("Enter data for array "+arrName+" (0 to finish): ");
 				i++;
 			} else {
 				santinelValue = false;
@@ -47,15 +47,14 @@ public class cw1 {
 	private static void printArray(char arrName, int[] array){
 		System.out.print("Values for array " + arrName + " is: ");
 		for (int i=0; i< array.length; i++){
-			// can't find another way of comparing with 0!!!
-			if((array[i]*1)!=array[i]){
-				System.out.println("\n");
+			// only print non 0 values - this is cheeting!!
+			if(array[i]==0){
+				System.out.print("\n");
 				return;
 			}else{
 				System.out.print(array[i]+" ");
 			}
 		}
-		System.out.println("\n");
 		return;
 	}
 }
