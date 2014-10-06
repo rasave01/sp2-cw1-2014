@@ -2,13 +2,16 @@ import java.util.Scanner;
 public class cw1 {
 
 	public static void main(String[] args) {
+		
 		// declare names of arrays as constants
 		final char a='1';
 		final char b='2';
 		/** fill arrays in turn by getting first element and if not 0 continue to get elements until 0 */
 		int first[] = fillArray(a);
-		//int second[] = fillArray(b);
+		int second[] = fillArray(b);
 		printArray(a, first);
+		printArray(b, second);
+		
 		
 		/** method to find common data and put it in a third array*/
 		/** method to display third array, and its length */
@@ -16,28 +19,25 @@ public class cw1 {
 		
 		/** method to find non-common values between two arrays, do this twice for 1+3, and 2+3*/
 	}
-	
-	
+
 	//method to read an array
 	private static int[] fillArray(char arrName) {
 		int[] returnArray;// declare array variable
 		returnArray = new int[100]; // initialise array
-		Scanner scanner;
-		scanner = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		// get first element
-		int element = 1;
+		
 		int i=0;
-		while (element!=0){
+		while (scanner.hasNextInt()){
 			System.out.println("Enter data for array " + arrName +" (0 to finish): ");
-			element = scanner.nextInt();
-			returnArray[i]=element;
+			returnArray[i] =  scanner.nextInt();
 			i++;
 			} ;
-		scanner.close();
+		scanner.close();	
 		return returnArray;
 		}
 	
-	//method to write non 0 values of an array
+	//method to write non 0 values of an array (hopefully :( )
 	private static void printArray(char arrName, int[] array){
 		System.out.print("Values for array " + arrName + " is: ");
 		for (int i=0; i< array.length; i++){
