@@ -28,10 +28,10 @@ public class cw1 {
         
         //print non common values
         System.out.print ("Non-common values for array 1 is ");
-        displayElements(a, nonCommon(first,commonArray));
-        
+        nonCommon(first,commonArray);
+        System.out.println();
         System.out.print ("Non-common values for array 2 is ");
-        displayElements(a, nonCommon(second,commonArray));
+        nonCommon(second,commonArray);
       
     }
 
@@ -112,19 +112,24 @@ public class cw1 {
     }
     
     //method to return non common values of two arrays first array must be larger than the second
-    private static int[] nonCommon(int[] arrayA, int[] arrayB){
+    private static void nonCommon(int[] arrayA, int[] arrayB){
        //create new array with the length as the difference of the lengths of two arrays
-        
-       int[] nonCommon = new int[arrayA.length-arrayB.length];
-        int n=0;
-        for(int i=0; i<arrayA.length; i++){
-            for (int j=0;j<arrayB.length; j++){
-                if(arrayA[i]!=arrayB[j]){
-                    nonCommon[n]=arrayA[i];
-                    n++;
+       
+       int n = arrayA.length;
+        for(int i=0; i<arrayB.length; i++){
+            for (int j=0; j<arrayA.length; j++){
+                if(arrayB[i]==arrayA[j]){
+                   arrayA[j] = arrayA[n-1];
+                   n--;
                 }
             } 
-        } 
-       return nonCommon; 
+        }
+        for (int i=0; i<n; i++){
+            System.out.print(arrayA[i]+" ");
+        }
+        System.out.print("\n");
+
+       return;
     }
- }
+}
+ 
