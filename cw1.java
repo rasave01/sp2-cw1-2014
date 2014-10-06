@@ -23,11 +23,16 @@ public class cw1 {
         System.out.print ("Common data is ");
         displayElements(a, commonArray);
         
-        /** method to find common data and put it in a third array*/
-        /** method to display third array, and its length */
-        //changed something here to check git1. looks like git is working
+        //print number of common data
+        System.out.println ("Number of common data is : " + commonArray.length);
         
-        /** method to find non-common values between two arrays, do this twice for 1+3, and 2+3*/
+        //print non common values
+        System.out.print ("Non-common values for array 1 is ");
+        displayElements(a, nonCommon(first,commonArray));
+        
+        System.out.print ("Non-common values for array 2 is ");
+        displayElements(a, nonCommon(second,commonArray));
+      
     }
 
     //method to read an array
@@ -105,4 +110,21 @@ public class cw1 {
         System.out.print("\n");
         return;
     }
-}
+    
+    //method to return non common values of two arrays first array must be larger than the second
+    private static int[] nonCommon(int[] arrayA, int[] arrayB){
+       //create new array with the length as the difference of the lengths of two arrays
+        
+       int[] nonCommon = new int[arrayA.length-arrayB.length];
+        int n=0;
+        for(int i=0; i<arrayA.length; i++){
+            for (int j=0;j<arrayB.length; j++){
+                if(arrayA[i]!=arrayB[j]){
+                    nonCommon[n]=arrayA[i];
+                    n++;
+                }
+            } 
+        } 
+       return nonCommon; 
+    }
+ }
