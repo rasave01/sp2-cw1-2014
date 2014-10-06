@@ -12,9 +12,16 @@ public class cw1 {
         int second[] = fillArray(b);
         
         //print arrays
+        System.out.print ("Values for array 1 is ");
         displayElements(a, first);
+        
+        System.out.print ("Values for array 2 is ");
         displayElements(b, second);
         
+        //print common data
+        int commonArray[]=common(first,second);
+        System.out.print ("Common data is ");
+        displayElements(a, commonArray);
         
         /** method to find common data and put it in a third array*/
         /** method to display third array, and its length */
@@ -64,9 +71,34 @@ public class cw1 {
         return returnArray;
     }
     
-    //method to write non 0 values of an array (hopefully :( )
+    //method that takes two int arrays and returns an array of common values
+    private static int[] common(int[] arrayA, int[] arrayB){
+       //find out the number of common values first so that an array can be returned
+        int n=0;
+        for(int i=0; i<arrayA.length; i++){
+            for (int j=0;j<arrayB.length; j++){
+                if(arrayA[i]==arrayB[j]){
+                    n++;
+                }
+            } 
+        } 
+       //initiate return array and repeat the process above, but this time add data to return array and 
+       //increase counter each time an element is added
+        int[] common = new int[n];
+        n = 0;
+        for(int i=0; i<arrayA.length; i++){
+            for (int j=0;j<arrayB.length; j++){
+                if(arrayA[i]==arrayB[j]){
+                    common[n] = arrayA[i];
+                    n++;
+                }
+            } 
+        } 
+        return common;
+    }
+ 
+    //method to write the array to console in the same format as required
     private static void displayElements(char arrName, int[] array){
-        System.out.print("Values for array " + arrName + " is: ");
         for (int i=0; i< array.length; i++){
             System.out.print(array[i]+" ");
         }
