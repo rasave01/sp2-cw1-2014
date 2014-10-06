@@ -12,8 +12,8 @@ public class cw1 {
         int second[] = fillArray(b);
         
         //print arrays
-        printArray(a, first);
-        printArray(b, second);
+        displayElements(a, first);
+        displayElements(b, second);
         
         
         /** method to find common data and put it in a third array*/
@@ -26,8 +26,7 @@ public class cw1 {
     //method to read an array
     private static int[] fillArray(char arrName) {
         final int MAXL = 100; 
-        int[] inArray = new int[MAXL];// declare array variable
-        inArray = new int[100]; // initialise array          
+        int[] inArray = new int[MAXL];// declare array variable         
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter data for array "+arrName+" (0 to finish): ");
         int i=0;
@@ -42,17 +41,16 @@ public class cw1 {
                 boolean found = false;
                 for(int k=0; k<i; k++){
                     if(inArray[k]== element){
-                        //if element same as array[k] fchange flag 
+                        //if element same as array[k] change flag 
                         found = true;
                     }
                 }    
                 if (!found){
                     //if not in array already the put it in
                     inArray[i] = element;
-                    System.out.print("Enter data for array "+arrName+" (0 to finish): ");
                     i++;
                 }   
-                
+                System.out.print("Enter data for array "+arrName+" (0 to finish): ");
             } else {
                 santinelValue = false;
             }
@@ -67,7 +65,7 @@ public class cw1 {
     }
     
     //method to write non 0 values of an array (hopefully :( )
-    private static void printArray(char arrName, int[] array){
+    private static void displayElements(char arrName, int[] array){
         System.out.print("Values for array " + arrName + " is: ");
         for (int i=0; i< array.length; i++){
             System.out.print(array[i]+" ");
