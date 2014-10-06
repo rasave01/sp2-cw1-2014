@@ -35,14 +35,30 @@ public class cw1 {
         while (santinelValue) {
             int element = scanner.nextInt();
             if (element!=0){
-                inArray[i] = element;
-                System.out.print("Enter data for array "+arrName+" (0 to finish): ");
-                i++;
+                // element not zeroes so we can check if it is in array already
+                //for this loop through the elements already in the array, 
+                //no point cheking beyond counter as data has not been entered there yet
+                // need a flg to indicate that, chose found
+                boolean found = false;
+                for(int k=0; k<i; k++){
+                    if(inArray[k]== element){
+                        //if element same as array[k] fchange flag 
+                        found = true;
+                    }
+                }    
+                if (!found){
+                    //if not in array already the put it in
+                    inArray[i] = element;
+                    System.out.print("Enter data for array "+arrName+" (0 to finish): ");
+                    i++;
+                }   
+                
             } else {
                 santinelValue = false;
             }
         }
         scanner.close();
+        // initialise the return array in order to get rid of zeroes
         int[] returnArray = new int[i];
         for (int j=0; j<returnArray.length;j++){
             returnArray[j] = inArray[j];
