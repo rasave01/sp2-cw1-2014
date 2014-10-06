@@ -12,7 +12,7 @@ public class cw1 {
 		
 		/** method to find common data and put it in a third array*/
 		/** method to display third array, and its length */
-		//changed something here to check git1
+		//changed something here to check git1. looks like git is working
 		
 		/** method to find non-common values between two arrays, do this twice for 1+3, and 2+3*/
 	}
@@ -41,7 +41,7 @@ public class cw1 {
 	private static void printArray(char arrName, int[] array){
 		System.out.print("Values for array " + arrName + " is: ");
 		for (int i=0; i< array.length; i++){
-			// can't find another way of comparing with 0  !!!
+			// can't find another way of comparing with 0!!!
 			if((array[i]*1)!=array[i]){
 				System.out.println("\n");
 				return;
