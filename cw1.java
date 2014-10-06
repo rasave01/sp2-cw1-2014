@@ -41,7 +41,7 @@ public class cw1 {
 	private static void printArray(char arrName, int[] array){
 		System.out.print("Values for array " + arrName + " is: ");
 		for (int i=0; i< array.length; i++){
-			// can't find another way of comparing with 0!!!
+			// can't find another way of comparing with 0  !!!
 			if((array[i]*1)!=array[i]){
 				System.out.println("\n");
 				return;
