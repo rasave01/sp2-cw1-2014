@@ -26,16 +26,22 @@ public class cw1 {
 		returnArray = new int[100]; // initialise array
 		Scanner scanner = new Scanner(System.in);
 		// get first element
-		
+		System.out.println("Enter data for array "+arrName+" (0 to finish): ");
 		int i=0;
-		while (scanner.hasNextInt()){
-			System.out.println("Enter data for array " + arrName +" (0 to finish): ");
-			returnArray[i] =  scanner.nextInt();
-			i++;
-			} ;
-		scanner.close();	
-		return returnArray;
+		boolean santinelValue = true;
+		while (santinelValue) {
+			int element = scanner.nextInt();
+			if (element!=0){
+				returnArray[i] = element;
+				System.out.println("and another");
+				i++;
+			} else {
+				santinelValue = false;
+			}
 		}
+		scanner.close();
+		return returnArray;
+	}
 	
 	//method to write non 0 values of an array (hopefully :( )
 	private static void printArray(char arrName, int[] array){
@@ -52,6 +58,4 @@ public class cw1 {
 		System.out.println("\n");
 		return;
 	}
-
-
 }
